@@ -21,17 +21,21 @@ const HEROES: Hero[] = [
 
 @Component({
   selector: 'my-app',
-  template: `<h3>heroes</h3>
-  <ul class="heroes>
+  template: `
+  <h3>heroes</h3>
+  <ul class="heroes">
      <li *ngFor="let hero of heroes">
+       <span class="badge">{{hero.id}}</span> {{hero.name}}
      </li>
-  </ul>`,
+  </ul>
+  `
 })
+
 export class AppComponent  { 
 title = 'Tour of Heroes'; 
 hero: Hero = {
    id:1, 
    name: 'jackie chan'
  };
- heros = HEROES;
+ heroes = HEROES;
 }
