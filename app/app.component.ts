@@ -18,12 +18,14 @@ const HEROES: Hero[] = [
 @Component({
   selector: 'my-app',
   template: `
+  <h3>{{title}}</h3>
   <h3>heroes</h3>
   <ul class="heroes">
      <li *ngFor="let hero of heroes" [class.selected]="hero===selectedHero" (click)="onSelect(hero)">
        <span class="badge">{{hero.id}}</span> {{hero.name}}
      </li>
   </ul>  
+  <my-hero-detail [hero]="selectedHero"></my-hero-detail>
   `,
   
   styles: [`
